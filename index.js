@@ -67,7 +67,7 @@ let allWagesFor = function () {
 }
 
 function findEmployeeByFirstName(srcArray, name){
-     return employeesList.find(function(employee) {
+     return srcArray.find(function(employee) {
        return employee.firstName === name
     })
   }
