@@ -23,7 +23,8 @@ function createTimeInEvent(timeIn){
 
 
 function createTimeOutEvent(timeOut){
-  let newEvent = {type: "TimeOut", hour: parseInt(timeOut.substring(11, 15)), date: timeOut.substring(0,10)}
+  let [date, hour] = timeOut.split(' ')
+  let newEvent = {type: "TimeOut", hour: hour, date: date}
   this.timeOutEvents.push(newEvent)
   return this
 };
