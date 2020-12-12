@@ -27,17 +27,17 @@ function createTimeOutEvent(timeOut){
   return this
 };
 
-function hoursWorkedOnDate(date) {
-  let punchIn = this.timeInEvents.find(n => {
-     return n.date === date})
-     console.log(this.timeInEvents)
-  let punchOut = this.timeOutEvents.find(n => {
-     return n.date === date})
+let hoursWorkedOnDate = function(soughtDate){
+    let inEvent = this.timeInEvents.find(function(e){
+        return e.date === soughtDate
+    })
 
-    let hoursWorked = punchOut.hour - punchIn.hour
-     return hoursWorked/100
+    let outEvent = this.timeOutEvents.find(function(e){
+        return e.date === soughtDate
+    })
+
+    return (outEvent.hour - inEvent.hour) / 100
 }
-
 /*
  We're giving you this function. Take a look at it, you might see some usage
  that's new and different. That's because we're avoiding a well-known, but
