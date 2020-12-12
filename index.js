@@ -40,7 +40,8 @@ function hoursWorkedOnDate(date) {
 }
 
 function wagesEarnedOnDate(date) {
-  return hoursWorkedOnDate(date) * this.payPerHour
+  let wages = hoursWorkedOnDate.call(this, date) * this.payPerHour
+  return wages
 }
 /*
  We're giving you this function. Take a look at it, you might see some usage
