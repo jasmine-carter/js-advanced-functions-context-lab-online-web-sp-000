@@ -1,4 +1,41 @@
 /* Your Code Here */
+function createEmployeeRecord(employee) {
+  return {
+    firstName : employee[0],
+    familyName : employee[1],
+    title : employee[2],
+    payPerHour: employee[3],
+    timeInEvents: [],
+    timeOutEvents: []
+  }
+}
+
+function createEmployeeRecords(records) {
+  return records.map(createEmployeeRecord)
+};
+
+function createTimeInEvent(timeIn){
+  let newEvent = {type: "TimeIn", hour: parseInt(timeIn.substring(11, 15)), date: timeIn.substring(0,10)}
+  this.timeInEvents.push(newEvent)
+  return this
+};
+
+
+function createTimeOutEvent(timeOut){
+  let newEvent = {type: "TimeOut", hour: parseInt(timeOut.substring(11, 15)), date: timeOut.substring(0,10)}
+  this.timeOutEvents.push(newEvent)
+  return this
+};
+
+function hoursWorkedOnDate(date) {
+  let punchIn = this.timeInEvents.filter(n => {
+     return n.date === date})
+  let punchOut = this.timeOutEvents.filter(n => {
+     return n.date === date})
+
+    let hoursWorked = punchOut.hour - punchIn.hour
+     return hoursWorked/100
+}
 
 /*
  We're giving you this function. Take a look at it, you might see some usage
