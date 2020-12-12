@@ -71,3 +71,11 @@ function findEmployeeByFirstName(srcArray, name){
        return employee.firstName === name
     })
   }
+
+  function calculatePayroll(employees) {
+    let payroll = 0
+    for (const employee of employees) {
+      payroll = allWagesFor(employee) + payroll;
+    }
+    return payroll;
+  };
