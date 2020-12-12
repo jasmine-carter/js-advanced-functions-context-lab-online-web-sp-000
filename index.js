@@ -29,11 +29,11 @@ function createTimeOutEvent(timeOut){
   return this
 };
 
-function hoursWorkedOnDate(cRecord, date) {
-  let punchIn = cRecord.timeInEvents.find(function(n){
+function hoursWorkedOnDate(date) {
+  let punchIn = this.timeInEvents.find(function(n){
      return n.date === date})
      console.log(punchIn)
-  let punchOut = cRecord.timeOutEvents.find(n => {
+  let punchOut = this.timeOutEvents.find(n => {
      return n.date === date})
 
     return (punchOut.hour - punchIn.hour)/100
