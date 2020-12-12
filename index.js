@@ -65,3 +65,9 @@ let allWagesFor = function () {
 
     return payable
 }
+
+function findEmployeeByFirstName(srcArray, name){
+     return employeesList.find(function(this) {
+       return this.firstName === name
+    })
+  }
