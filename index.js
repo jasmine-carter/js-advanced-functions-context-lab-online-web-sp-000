@@ -15,14 +15,14 @@ function createEmployeeRecords(records) {
 };
 
 function createTimeInEvent(timeIn){
-  let newEvent = {type: "TimeIn", hour: parseInt(timeIn.substring(11, 15)), date: timeIn.substring(0,8)}
+  let newEvent = {type: "TimeIn", hour: parseInt(timeIn.substring(11, 15)), date: timeIn.substring(0,10)}
   this.timeInEvents.push(newEvent)
   return this
 };
 
 
 function createTimeOutEvent(timeOut){
-  let newEvent = {type: "TimeOut", hour: parseInt(timeOut.substring(11, 15)), date: timeOut.substring(0,8)}
+  let newEvent = {type: "TimeOut", hour: parseInt(timeOut.substring(11, 15)), date: timeOut.substring(0,10)}
   this.timeOutEvents.push(newEvent)
   return this
 };
