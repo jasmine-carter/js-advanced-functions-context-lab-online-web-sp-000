@@ -73,9 +73,7 @@ function findEmployeeByFirstName(srcArray, name){
   }
 
   function calculatePayroll(employees) {
-    let payroll = 0
-    for (const employee of employees) {
-      payroll = allWagesFor(employee) + payroll;
-    }
-    return payroll;
+    return employees.reduce(function(memo, employee){
+      return memo + allWagesFor.call(employee)
+    })
   };
