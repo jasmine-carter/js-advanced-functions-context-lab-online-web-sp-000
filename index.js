@@ -16,7 +16,7 @@ function createEmployeeRecords(records) {
 
 function createTimeInEvent(timeIn){
   let [date, hour] = timeIn.split(' ')
-  let newEvent = {type: "TimeIn", hour: hour, date: date}
+  let newEvent = {type: "TimeIn", hour: parseInt(hour), date: date}
   this.timeInEvents.push(newEvent)
   return this
 };
@@ -24,7 +24,7 @@ function createTimeInEvent(timeIn){
 
 function createTimeOutEvent(timeOut){
   let [date, hour] = timeOut.split(' ')
-  let newEvent = {type: "TimeOut", hour: hour, date: date}
+  let newEvent = {type: "TimeOut", hour: parseInt(hour), date: date}
   this.timeOutEvents.push(newEvent)
   return this
 };
